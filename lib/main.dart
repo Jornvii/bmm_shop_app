@@ -1,3 +1,4 @@
+import 'package:bmm_shop_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/login_screen.dart';
 import 'screens/profile_screen.dart';
@@ -9,13 +10,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Login and Registration App',
+      title: 'BM App',
       theme: ThemeData(primarySwatch: Colors.blue),
-      initialRoute: '/login',
+      initialRoute: '/home',
       routes: {
         '/login': (context) => LoginScreen(),
         '/signup': (context) => RegisterScreen(),
-        '/profile': (context) => ProfileScreen(),
+        '/profile': (context) => const ProfileScreen(),
+        '/home':(context)=>const HomeScreen(),
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(builder: (context) => LoginScreen()); // Fallback route
